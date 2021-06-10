@@ -1,0 +1,122 @@
+.hidden {
+  display: none;
+}
+
+body {
+  margin-left: 0px;
+  margin-right: 0px;
+  overflow: hidden;
+}
+
+.menu-button {
+  min-width: 100px;
+  width: 10vw;
+  border-style: solid;
+  border-color: black;
+  border-width: 5px;
+}
+
+.dropdown-menu {
+  border-width: 5px 0 0 0;
+  border-color: black;
+  border-style: solid;
+}
+
+.scrollable-menu {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  width: 95vw;
+  overflow-x: scroll;
+}
+
+.scrollable-menu-item {
+  width: auto;
+  height: 50px;
+  word-wrap: normal;
+  margin: 10px;
+}
+
+.image {
+  display: flex;
+  justify-content: space-around;
+  width: 314px;
+}
+
+img {
+  border-radius: 10px;
+}
+
+.image-carousel {
+  width: 3500px;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  right: 157px;
+  transition: transform 700ms ease-in-out;
+}
+
+.image-frame {
+  background-image: url("https://cdn.wallpapersafari.com/55/61/uLSIjT.jpg");
+  background-size: cover;
+  width: 628px;
+  height: 310px;
+  overflow: hidden;
+  border-style: solid;
+  border-radius: 20px;
+  border-color: brown;
+}
+
+.image-carousel._1 {
+  transform: translate(-0px);
+}
+
+.image-carousel._2 {
+  transform: translate(-314px);
+}
+
+.image-carousel._3 {
+  transform: translate(-628px);
+}
+
+.image-carousel._4 {
+  transform: translate(-942px);
+}
+
+.image-carousel._5 {
+  transform: translate(-1256px);
+}
+
+.image-carousel._6 {
+  transform: translate(-1570px);
+}
+
+.image-carousel._7 {
+  transform: translate(-1884px);
+}
+
+.image-carousel._8 {
+  transform: translate(-2198px);
+}
+
+.image-carousel._9 {
+  transform: translate(-2512px);
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  bottom: 30px;
+}
+
+.selector-button {
+  margin-right: 10px;
+  opacity: 70%;
+  border-radius: 10px;
+  width: 20px;
+}
+
+.selected {
+  opacity: 100%;
+}
