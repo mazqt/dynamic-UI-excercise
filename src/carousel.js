@@ -16,7 +16,6 @@ const carousel = (function () {
 
   const _swapImage = function (num) {
     ele[0].setAttribute("class", `image-carousel _${num}`);
-    console.log(num);
     buttons[currentImg].classList.toggle("selected");
     currentImg = num;
     buttons[currentImg].classList.toggle("selected");
@@ -26,9 +25,21 @@ const carousel = (function () {
     var i;
     for (i = 0; i < 11; i++) {
       if (i == 0) {
-        console.log(buttons[i]);
+        buttons[i].addEventListener("click", function () {
+          if (currentImg == 1) {
+            _swapImage(9);
+          } else {
+            _swapImage(currentImg - 1);
+          }
+        });
       } else if (i == 10) {
-        console.log(buttons[i]);
+        buttons[i].addEventListener("click", function () {
+          if (currentImg == 9) {
+            _swapImage(1);
+          } else {
+            _swapImage(currentImg + 1);
+          }
+        });
       } else {
         buttons[i].addEventListener("click", _swapImage.bind(null, i));
       }
