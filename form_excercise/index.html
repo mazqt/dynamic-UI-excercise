@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <h1>Tournament Registration</h1>
+
+    <form>
+      <label>Email</label><br />
+      <input type="email" name="email" id="email" /><br />
+      <p id="mailError" class="hidden"></p>
+      <label>Country</label><br />
+      <input
+        type="text"
+        name="country"
+        id="country"
+        pattern="[A-Z][A-Z]"
+      /><br />
+      <p id="countryError" class="hidden"></p>
+      <label>Zip Code</label><br />
+      <input
+        type="text"
+        name="zipcode"
+        id="zipcode"
+        pattern="[0-9]{3}-[0-9]{2}"
+      /><br />
+      <p id="zipError" class="hidden"></p>
+      <label>Password</label><br />
+      <input
+        type="password"
+        name="password"
+        id="password"
+        pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&+]{8,32}$"
+      /><br />
+      <p id="passwordError" class="hidden"></p>
+      <label>Confirm Password:</label><br />
+      <input type="password" name="confirmation" id="confirmation" /><br />
+      <p id="confirmationError" class="hidden"></p>
+      <button type="submit">Submit</button>
+    </form>
+
+    <script src="index.js"></script>
+  </body>
+</html>

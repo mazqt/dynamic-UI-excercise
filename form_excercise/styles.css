@@ -1,0 +1,12 @@
+.hidden {
+  display: none;
+}
+
+input:invalid {
+  border-color: red;
+  border-style: dashed;
+}
+
+input:focus:invalid {
+  outline: none;
+}
