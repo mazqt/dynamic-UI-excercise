@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <label name="searchbar">Search for a gif!: </label>
+    <input type="text" name="searchbar" id="searchbar" />
+    <input type="button" name="search" value="Search" id="search" /><br /><br />
+    <img src="#" style="max-width: 50vw; max-height: 50vh" />
+    <p id="error" style="display: none">We couldn't find any images D:</p>
+    <script>
+      const img = document.querySelector("img");
+      const error = document.getElementById("error");
+      const searchbar = document.getElementById("searchbar");
+      const submit = document.getElementById("search");
+
+      const getGiphy = function (keyword) {
+        fetch(
+          `https://api.giphy.com/v1/gifs/translate?api_key=uS14snrIsw0Oiohy7N8LI9IqaJyMMPV9&s=${keyword}`,
+          { mode: "cors" }
+        )
+          .then(function (response) {
+            return response.json();
+          })
+          .then(function (response) {
+            img.src = response.data.images.original.url;
+            error.style.display = "none";
+          })
+          .catch(function (err) {
+            img.src =
+              "https://previews.123rf.com/images/izakowski/izakowski1405/izakowski140500095/28459275-black-and-white-cartoon-illustration-of-cute-sad-dog-or-puppy-for-coloring-book.jpg";
+            error.style.display = "";
+          });
+      };
+
+      submit.addEventListener("click", () => {
+        getGiphy(searchbar.value);
+      });
+    </script>
+  </body>
+</html>
